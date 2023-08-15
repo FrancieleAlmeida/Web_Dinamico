@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let num1 = Number(window.prompt('Informe o primeiro numero'));
+        let num2 = Number(window.prompt('Informe o segundo numero'));
+        let codigo = Number(window.prompt('Informe o codigo entre 1-3'));
+
+        switch (codigo) {
+
+            case 1: document.write(`O resultado da soma entre ${num1} e ${num2} é `,num1+num2 ); break
+            case 2: document.write(`O resultado da multiplicação entre ${num1} e ${num2} é `, num1*num2); break
+            case 3: document.write(`O resultado da divisão entre ${num1} e ${num2} é `, num1/num2); break
+            default: document.write('Codigo invalido, informe de 1 a 3')
+        
+        }
+
+    </script>
+</body>
+</html>

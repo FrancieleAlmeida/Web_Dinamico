@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let idade = Number(window.prompt('Informe sua idade'))
+
+        if(idade>=18){
+            var msg = 'Adulto'
+        }else if(idade>=14 && idade < 18){
+            msg = 'Juvenil'
+        }else if(idade >=9 && idade <14){
+           msg = 'Infantil'
+        }else{
+            msg = 'Mirim'
+        }
+
+        document.write(`voce sera classificado como  ${msg}`)
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        let preco = Number(window.prompt('Informe o preço do produto'))
+        let parc = Number(window.prompt('Deseja parcelar em quantas vezes? 3 ou 5'))
+        let total = 0
+        let prestacao = 0
+        if(parc==3){
+            total = preco + (preco * 0.10)
+            prestacao = total / 3
+        }else if(parc==5){
+            total = preco + (preco * 0.20)
+            prestacao = total / 5
+        }else{
+            document.write(`Valor incorreto...`)
+        }
+
+        document.write(`O valor total a pagar será de ${total} `)
+        document.write(`o valor das ${parc} prestações mensais sera de ${prestacao}`)
+
+    </script>
+</body>
+</html>

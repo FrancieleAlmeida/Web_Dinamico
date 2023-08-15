@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <section id="resultado"></section>
+    <script>
+
+        let nome = window.prompt('Informe o nome:')
+        let nota1 = Number(window.prompt('Informe o valor da nota 1'))
+        let nota2 = Number(window.prompt('informe o valor da nota 2'))
+        let nota3 = Number(window.prompt('Informe o valor da nota 3'))
+
+        let media = (nota1+nota2+nota3) / 3
+
+        if(media>=8){
+            var msg = 'Aprovado'
+        }else{
+              msg = 'Reprovado'
+
+        }
+
+        let result = document.getElementById('resultado')
+
+        result.innerHTML = `Aluno(a) ${nome}`
+        result.innerHTML += ` <p> recebeu ${media} de media `
+        result.innerHTML += ` <p> e está ${msg} ` 
+        
+
+
+    </script>
+</body>
+</html>

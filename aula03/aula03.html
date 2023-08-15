@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>arrays/objetos strings</h1>
+
+    <ul>
+        <li>valueof()</li> - retorna  o valor primitivod do objetos
+        <li>charAt()</li> - retorna uma string contendo o caractere de posicao
+        <li>concat(string, string,...)</li> - este metodo retorna uma string contendo string
+        <li>replace</li> -  busca na string uma substring que seja igual  ao conteudo
+        <li>slice(ini,fim)</li> -  retornar a substring contendo os caract. inicio ate o fim
+        <li>split(separator, limit)</li> - retorna um obj. array contendo as substring entre o seu separador e o limite
+        <li>(inicio, fim)</li> - retorna um resultado da conversão di objeto que chamou o metodo(inicio até fim)
+        <li>toLowerCase</li> tudo em minuscula
+        <li>toUpperCase</li>tudo em maiuscula
+    </ul>
+
+
+    <h1>arrays</h1>
+
+    <ul>
+        <li>concat</li>-agrupa todos os elementos do array
+        <li>pop()</li>-o ultimo elemento do array removido
+        <li>push()</li> - insere o elemento no final do vetor
+        <li>shift()</li>- o primeiro elemento é removido
+        <li>sort()</li>-ordena vetor (string)
+        <li>length</li>-propriedade contem o tamanho do vetor
+
+
+    </ul>
+    <script>
+
+        //valueof
+        var s = new Sring('gerador de campos')
+        var str = s.valueof()
+
+        //charAt
+        var str = 'Instituto'
+        var carac = str1.charAt(3)    
+        document.write(carac)   
+        
+        var str2 = 'praticando', str3 = 'javascript'
+        var result = str2.concat(str3)
+        document.write(result)
+
+        //replace
+        var a = 'não esqueça de estudar'
+        var res1 = a.replace('esqueça','pare')
+        console.log(res1)
+
+        //slice
+        var str4 = 'até mais e obrigado!'
+        var res2 = str4.slice(4,10) // result = mais e
+        console.log(res2)
+        var res3 = str4.slice(7) // result =s
+        console.log(resp3)
+        var res4 = str4.slice(-5, -1)//result =
+        console.log(resp4)
+
+        //split
+        var data = 'terra, marte, jupiter'
+        var arr1 = data.slit(',')
+        console.log(aar1)
+        var arr2 = data.slit(',',2)
+        console.log(arr2)
+
+        //arrays
+        var vetor = [4,8,15,16,23,42]
+        var res5 = vetor.pop() //result = [4,8,15,16,23]
+
+        var vetor2 = ['fusca','onix']
+        var res6 = vetor.push('opala')//result = [fusca, onix, opala]
+
+
+        //sprt
+        var vetor3 = ['d','y','a','n','h']
+        vetor3.sort()
+
+
+
+        
+    </script>
+
+
+</body>
+</html>

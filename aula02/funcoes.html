@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>Resultados</h1>
+    <button onclick="sub()"> Ver resultado</button>
+    
+    <script>
+        //________________________________________________________________
+        function somaDiferentes(a, b){
+            if(a===b){
+                document.write('numeros iguais')
+                return 0
+            }
+            document.write('numeros diferentes')
+            
+            result = a + b
+            
+        }
+        //________________________________________________________________
+
+        function sub(){
+            let r =  somaDiferentes(2,3)
+            document.write(r)
+        }
+        //________________________________________________________________
+        function areaTriangulo(b, h){
+            return b*h/2
+        }
+
+    </script>
+</body>
+</html>
