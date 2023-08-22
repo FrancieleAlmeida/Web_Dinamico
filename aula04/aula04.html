@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom</title>
+    <style>
+        .bgColor{
+            background: #3f3;
+            box-shadow: 0 5px 5px rgb(0, 0, 0,0.2);
+            border-radius: 8px;
+            border: 1px solid red;
+            padding: 10px;
+
+        }
+
+        .blue{
+            color:blue;
+            font-size: 18px;
+
+        }
+    </style>
+</head>
+<body>
+
+    <div id = "container">
+
+        <p class = "text">Lorem ipsum dolor sit.</p>
+
+        <span class = 'text'>Lorem ipsum dolor sit amet.</span>
+
+        <p name="text-name">Lorem ipsum dolor sit.</p>
+    </div>
+
+    
+    <script>
+      
+      const div =  document.getElementById('container')
+
+      div.classList.add('bgColor')
+            
+      const text = document.getElementsByClassName('text')
+        
+
+      const name= document.getElementsByName('text-name')
+
+      const p = document.getElementsByTagName('p')
+
+      const q = document.querySelector('#container>span')
+
+      console.log(q)
+
+      text[1].classList.add('blue')
+
+     // console.log(div)
+      //console.log(text)
+      //console.log(name)
+      //console.log(p)
+
+
+
+
+
+    </script>
+
+
+</body>
+</html>

@@ -1,0 +1,108 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: "Roboto", sans-serif;
+  list-style: none;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+}
+
+.container {
+  width: 100wh;
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  background: #DEDEDE;
+  overflow: auto;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.row .formulario {
+  background: #f5f5f5;
+  width: 50%;
+  height: 33rem;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 2px 2px 10px 1px black;
+}
+.row .formulario h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.row .formulario label {
+  font-size: 1.7rem;
+}
+.row .formulario form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  height: 85%;
+}
+.row .formulario form #name,
+.row .formulario form #phone {
+  padding-left: 1rem;
+}
+.row .formulario form input {
+  border-radius: 10px;
+  font-size: 2rem;
+  height: 4rem;
+  border: none;
+  outline: none;
+}
+.row .formulario form input[type=tel]:focus,
+.row .formulario form input[type=text]:focus {
+  background: #dedede;
+  box-shadow: 0 0 5px rgba(10, 1, 1, 0.5019607843);
+}
+.row .formulario form .center {
+  display: flex;
+  justify-content: center;
+  margin-top: 0.5rem;
+}
+.row .formulario form .center input[type=submit] {
+  background: black;
+  color: white;
+  width: 30rem;
+  cursor: pointer;
+  font-size: 1.5rem;
+  border-radius: 50px;
+  border: none;
+  font-weight: bolder;
+}
+.row .formulario form .center input[type=submit]:hover {
+  background: #1d05f7;
+}
+.row .formulario form .erro {
+  font-size: small;
+  color: red;
+}
+
+.down {
+  display: flex;
+  justify-content: center;
+}
+.down .tabela {
+  width: 50%;
+  background: #f5f5f5;
+  border-radius: 10px;
+  box-shadow: 2px 2px 10px 1px black;
+  margin-top: 1rem;
+}
+.down .tabela table {
+  border-bottom: 0.1rem dashed black;
+  width: 100%;
+  padding-top: 1rem;
+}/*# sourceMappingURL=style.css.map */

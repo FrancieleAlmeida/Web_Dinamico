@@ -1,0 +1,114 @@
+@import './base';
+
+
+.container{
+    width: 100wh;
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    background: #DEDEDE;
+    overflow: auto;
+}
+
+.row{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+
+    .formulario{
+        background: #f5f5f5;
+        width: 50%;
+        height: 33rem;
+        padding: 1rem;
+        border-radius: 10px;
+        box-shadow: 2px 2px 10px 1px black;
+
+        h1{
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        label{
+            font-size: 1.7rem;
+        }
+
+        form{
+            display: flex;
+            flex-direction: column;
+            gap:1rem;
+            height: 85%;
+
+            #name, 
+            #phone{
+                padding-left: 1rem;
+            }
+
+            input{
+                border-radius: 10px;
+                font-size: 2rem;
+                height: 4rem;
+                border: none;
+                outline: none;
+                
+            }
+
+            input[type="tel"],
+            input[type="text"]{
+
+                &:focus{
+                    background: #dedede;
+                    box-shadow: 0 0 5px #0a010180;
+                }
+            }
+
+
+            .center{
+                display: flex;
+                justify-content: center;
+                margin-top: 0.5rem;
+
+                input[type="submit"]{
+                    background: black;
+                    color:white;
+                    width: 30rem;
+                    cursor: pointer;
+                    font-size: 1.5rem;
+                    border-radius: 50px;
+                    border: none;
+                    font-weight: bolder;
+                    
+
+                    &:hover{
+                        background: #1d05f7;
+                    }
+                }
+            }
+            .erro{
+                font-size: small;
+                color:red;
+            }
+        }   
+    }
+}
+
+.down{
+
+    display: flex;
+    justify-content: center;
+
+    .tabela{
+        width: 50%;
+        background: #f5f5f5;
+        border-radius: 10px;
+        box-shadow: 2px 2px 10px 1px black;
+        margin-top: 1rem;
+
+
+
+        table{
+            border-bottom: .1rem dashed black;
+            width: 100%;
+            padding-top: 1rem;
+        }
+    }
+}
