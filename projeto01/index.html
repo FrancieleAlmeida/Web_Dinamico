@@ -16,19 +16,19 @@
             <div class="formulario">
                 <h1>Contato</h1>
 
-                <form action="">
+                <form action="" >
                     
 
-                    <label for="nome">Nome:</label>
-                    <input type="text" name="nome" id="name" placeholder="Informe seu nome"  minlength="3" maxlength="10"  required>
+                    <label for="name">Nome:</label>
+                    <input type="text" name="nome" id="name" placeholder="Informe seu nome"  required>
                     <span class="erro"></span>
 
-                    <label for="telefone">Telefone:</label>
-                    <input type="tel" name="telefone" id="phone" placeholder="(55)55555-5555" required maxlength="14">
+                    <label for="fone">Telefone:</label>
+                    <input type="tel" name="telefone" id="fone" placeholder="(55)55555-5555" required maxlength="14">
                     <span class="erro"></span>
 
                     <div class="center">
-                        <input type="submit" value="Enviar">
+                        <input type="submit" value="Enviar" onclick="inserirContato();">
                     </div>
                 </form>
             </div>
@@ -37,7 +37,7 @@
         <div class="down">
 
             <div class="tabela">
-                <table>
+                <table id="tbContacts">
                     <thead>
                         <tr>
                         <th>ID</th>
@@ -46,6 +46,8 @@
                         <th>AÇÃO</th>
                         </tr>
                     </thead>
+                    <tbody>
+                    </tbody>
                 </table>
             </div>
         </div>
