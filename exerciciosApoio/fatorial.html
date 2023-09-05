@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fatorial</title>
+</head>
+<body>
+    <h1>Fatorial</h1>
+    <label for="inNumero">Informe o numero fatorial desejado:</label>
+    <input type="number" name="" id="inNumero">
+
+    <button id="btButton">Mostrar Fatorial</button>
+
+    <pre id="outFatorial"></pre>
+
+
+    <script>
+        function mostrarFatorial(){
+            let inNumero = document.getElementById("inNumero").value
+            let resp = ""
+            let mult = 1
+
+            for(let i = inNumero; i >= 1; i--){
+                resp += " * " + i
+                mult *= i
+                
+                document.getElementById("outFatorial").innerHTML = `${inNumero}! = ${resp} = ${mult}` 
+                
+            }
+        }
+
+        let btButton = document.getElementById("btButton")
+        btButton.addEventListener("click", mostrarFatorial)
+
+    </script>
+</body>
+</html>

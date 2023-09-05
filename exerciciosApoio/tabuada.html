@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabuada</title>
+</head>
+<body>
+    <h1>Tabuada</h1>
+    <p>Informe um numero para saber a tabuada:
+        <input type="number" name="" id="inTabuada">    
+    </p>
+    <input type="submit" value="Mostrar Tabuada" id="btSubmit">
+
+    <pre id="outTabuada"></pre>
+
+
+    <script>
+        function tabuada(){
+            let inTabuada = document.getElementById("inTabuada").value
+            let resp = ""
+
+            for(let i = 0; i<=10; i++){
+                resp += `${inTabuada} x ${i} = ${inTabuada * i} \n\n`
+
+                document.getElementById("outTabuada").innerHTML = resp
+
+            }
+
+        }
+
+        let btSubmit = document.getElementById("btSubmit")
+        btSubmit.addEventListener("click",tabuada)
+    </script>
+
+</body>
+</html>

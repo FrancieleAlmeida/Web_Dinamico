@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soma de numeros pares</title>
+</head>
+<body>
+    <h1>Soma de Numeros Pares</h1>
+    <label for="inNumero">Informe o número final:</label>
+    <input type="number" name="" id="inNumero">
+    <button id="btButton">Mostrar numeros pares</button>
+
+    <pre id="outNumero"></pre>
+
+    <script> 
+        function somaPares(){
+            let inNumero = document.getElementById("inNumero").value
+            let soma = 0
+            let num = ""
+
+            for(let i = 0; i<=inNumero; i++){
+
+                if (i % 2 == 0 && i != 0){
+                    soma += i
+                    num += " " + i
+                    console.log(soma)
+                    console.log(num)
+                }
+
+                document.getElementById("outNumero").textContent = `A soma dos valores pares:${num} = ${soma}`           }
+        }
+        let btButton = document.getElementById("btButton")
+        btButton.addEventListener("click", somaPares)
+    </script>
+
+</body>
+</html>

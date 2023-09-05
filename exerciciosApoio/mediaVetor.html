@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media de Valores em um Vetor</title>
+</head>
+<body>
+    <h1>Media de valores em um Vetor</h1>
+    <label for="inVetor">Informe os numeros do vetor:</label>
+    <input type="number" name="" id="inVetor">
+
+    <button id="btAdicionar">Adicionar numero</button>
+    <button id="btMedia">Mostrar Media</button>
+
+    <pre id="outMedia"></pre>
+    <script>
+        let adicionarVetor = []
+        function addVetor(){
+            let inVetor = document.getElementById("inVetor").value
+            adicionarVetor.push(inVetor)  
+            
+            document.getElementById("outMedia").innerHTML = ` numero ${adicionarVetor} adicionado`
+
+            
+        }
+
+        function mediaVetor(){
+            let soma = 0
+
+            for(let i=0;i<adicionarVetor.length; i++){
+
+                let posicaoVetor = Number(adicionarVetor[i])
+                soma += posicaoVetor
+            }
+            let media = soma / adicionarVetor.length
+            document.getElementById("outMedia").textContent = `a media do vetor é ${media.toFixed(2)}`
+        }
+
+        let btMedia = document.getElementById("btMedia")
+        btMedia.addEventListener("click", mediaVetor)
+        
+        let btAdicionar = document.getElementById("btAdicionar")
+        btAdicionar.addEventListener("click",addVetor)
+
+
+    </script>
+</body>
+</html>

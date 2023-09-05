@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contagem de Numeros Pares e Impares</title>
+</head>
+<body>
+    <h1>Contagem de Numeros Pares e Impares</h1>
+    <label for="inVetor">Informe o numeros do vetor:</label>
+    <input type="number" name="" id="inVetor">
+
+    <button id="btAdicionar">adicionar</button>
+    <button id="btMostrar">Mostrar pares e impares</button>
+
+    <pre id="infoPar"></pre>
+    <pre id="outPares"></pre>
+    <pre id="infoImpar"></pre>
+    <pre id="outImpar"></pre>
+
+
+
+    <script>
+        let vetor = []
+        function addvetor(){
+            let inVetor = document.getElementById("inVetor").value
+            
+            vetor.push(inVetor)
+            let numPar = ""
+            let numImpar = ""
+            for(let i=0; i <vetor.length; i++){
+
+                let numeroVetor = Number(vetor[i])
+
+                if(numeroVetor % 2 == 0){
+                    numPar += `${numeroVetor} `
+                    document.getElementById("infoPar").innerHTML = `<p> Numeros Pares: ${numPar}</p>`
+                }
+                else{
+                    numImpar += `${numeroVetor} `
+                    document.getElementById("infoImpar").innerHTML = `<p> Numeros Impares: ${numImpar}</p>`
+
+                }
+            }
+        }
+
+        function mostrarVetor(){
+            let somaPar = 0
+            let somaImpar = 0
+            for(let i=0; i <vetor.length; i++){
+
+                let numeroVetor = Number(vetor[i])
+
+                if(numeroVetor % 2 == 0){
+                    somaPar += numeroVetor
+                    
+                }
+                else{
+                    somaImpar += numeroVetor
+                }
+            }
+            document.getElementById("outPares").innerHTML = "a soma dos numeros pares é "+somaPar
+            document.getElementById("outImpar").innerHTML = "a soma dos numeros impares é "+somaImpar
+
+
+        }
+
+        let btAdicionar = document.getElementById("btAdicionar")
+        btAdicionar.addEventListener("click", addvetor)
+
+        let btMostrar = document.getElementById("btMostrar")
+        btMostrar.addEventListener("click", mostrarVetor)
+    </script>
+</body>
+</html>
