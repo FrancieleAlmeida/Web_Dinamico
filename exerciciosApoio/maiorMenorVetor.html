@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maior e Menor Valor em um Vetor</title>
+</head>
+<body>
+    <h1>Maior e Menor Valor em um Vetor</h1>
+
+    <label for="inNumero">Informe o numero: </label>
+    <input type="number" name="" id="inNumero">
+
+    <button id ="btAdicionar">Adicionar</button>
+    <button id="btResp">Mostrar Maior e Menor</button>
+
+    <div id="outMostrar"></div>
+
+
+    <script>
+        let vetor=[]
+        function addVetor(){
+            let inNumero = document.getElementById("inNumero").value
+            vetor.push(inNumero)
+            document.getElementById("inNumero").value = ""
+            
+            let outMostrar = document.getElementById("outMostrar")
+
+            outMostrar.innerHTML = `<p>Vetor = [${vetor}]</p>`
+        }
+
+        function mostrarVetor(){
+            let maior = vetor[0]
+            let menor = vetor[0]
+
+            let i = 0
+            for(i = 0 ; i <vetor.length;i++){
+
+
+                
+                let aux = Number(vetor[i])
+            
+                if(aux > maior) {
+                    maior = aux
+                }if(aux < menor){
+                    menor = aux
+                }
+            }
+            outMostrar.innerHTML +=`<p> O maior numero é: ${maior}</p>`
+            outMostrar.innerHTML +=`<p> O menor numero é: ${menor}</p>`
+            
+        }
+
+
+
+        let btAdicionar = document.getElementById("btAdicionar")
+        btAdicionar.addEventListener("click", addVetor)
+
+        let btResp = document.getElementById("btResp")
+        btResp.addEventListener("click",mostrarVetor    )
+    </script>
+</body>
+</html>

@@ -14,8 +14,9 @@
     <button id="btMostrar">Mostrar pares e impares</button>
 
     <pre id="infoPar"></pre>
-    <pre id="outPares"></pre>
     <pre id="infoImpar"></pre>
+
+    <pre id="outPares"></pre>
     <pre id="outImpar"></pre>
 
 
@@ -26,6 +27,8 @@
             let inVetor = document.getElementById("inVetor").value
             
             vetor.push(inVetor)
+
+            document.getElementById("inVetor").value = ""
             let numPar = ""
             let numImpar = ""
             for(let i=0; i <vetor.length; i++){
@@ -52,15 +55,15 @@
                 let numeroVetor = Number(vetor[i])
 
                 if(numeroVetor % 2 == 0){
-                    somaPar += numeroVetor
+                    somaPar ++
                     
                 }
                 else{
-                    somaImpar += numeroVetor
+                    somaImpar ++
                 }
             }
-            document.getElementById("outPares").innerHTML = "a soma dos numeros pares é "+somaPar
-            document.getElementById("outImpar").innerHTML = "a soma dos numeros impares é "+somaImpar
+            document.getElementById("outPares").innerHTML = "Existe  "+somaPar + " numeros pares"
+            document.getElementById("outImpar").innerHTML = "Existe  "+somaImpar + " numeros imapares"
 
 
         }

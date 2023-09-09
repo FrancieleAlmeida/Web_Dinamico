@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media de Notas</title>
+</head>
+<body>
+    <h1>Media de Notas</h1>
+
+    <label for="inQuantidade">Quantidade de notas a serem lançadas:</label>
+    <input type="number" name="" id="inQuantidade">
+    <button id="btQuantidade">informar quantidade</button>
+
+
+    <p>Informe as notas:
+        <input type="number" name="" id="inNotas"  placeholder="notas de 0 à 10">
+        <button id="btLancar">Adicionar Nota</button>
+        <button id="btMedia">Media</button>
+
+    </p>
+
+    <div id="outMostrar"></div>
+
+    <script>
+        let inQuantidade = 0
+        let somaDasNotas = 0
+
+        function informarQuantidade() {
+            inQuantidade = Number(document.getElementById("inQuantidade").value)
+            document.getElementById("inQuantidade").disabled = true
+            document.getElementById("btQuantidade").disabled = true
+        }
+
+        function adicionarNota() {
+            const inNotas = Number(document.getElementById("inNotas").value)
+            document.getElementById("outMostrar").innerHTML = `nota: ${inNotas}`
+            somaDasNotas += inNotas
+            document.getElementById("inNotas").value = ''
+            inQuantidade--
+
+            if (inQuantidade === 0) {
+                document.getElementById("btLancar").disabled = true
+                document.getElementById("btMedia").disabled = false
+            }
+        }
+
+        function calcularMedia() {
+            const media = somaDasNotas / (document.getElementById("inQuantidade").value)
+            document.getElementById("outMostrar").innerHTML = `Média das notas: ${media.toFixed(2)}`
+        }
+
+        let btQuantidade = document.getElementById("btQuantidade")
+        btQuantidade.addEventListener("click",informarQuantidade)
+
+        let btLancar = document.getElementById("btLancar")
+        btLancar.addEventListener("click", adicionarNota)
+
+        let btMedia = document.getElementById("btMedia")
+        btMedia.addEventListener("click", calcularMedia)
+    </script>
+</body>
+</html>

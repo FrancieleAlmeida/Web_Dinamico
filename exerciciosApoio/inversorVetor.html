@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inversão de Vetor</title>
+</head>
+<body>
+    <h1>Inversão de Vetor</h1>
+
+    <label for="inNumero">Informe os numeros do vetor:</label>
+    <input type="number" name="" id="inNumero">
+
+    <button id="btAdicionar">Adicionar</button>
+    <button id="btInverter">Inverter ordem</button>
+
+    <div id="outMostrar"></div>
+
+
+    <script>
+        let vetor = []
+        function addVetor(){
+            let inNumero = document.getElementById("inNumero").value
+            let outMostrar = document.getElementById("outMostrar")
+            vetor.push(inNumero)
+
+            document.getElementById("inNumero").value = ""
+
+
+            outMostrar.innerHTML = `<p>Vetor [ ${vetor}]</p>`
+
+        }
+
+        function inverterVetor(){
+            let vetorInvertido = vetor.slice().reverse()
+            
+
+            outMostrar.innerHTML += `<p> O inverso fica: Vetor [${vetorInvertido}]</p>`
+        }
+
+        let btAdicionar = document.getElementById("btAdicionar")
+        btAdicionar.addEventListener("click", addVetor)
+
+        let btInverter = document.getElementById("btInverter")
+        btInverter.addEventListener("click", inverterVetor)
+    </script>
+</body>
+</html>

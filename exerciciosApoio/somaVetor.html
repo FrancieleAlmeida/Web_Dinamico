@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soma dos Elementos de um Vetor</title>
+</head>
+<body>
+    <h1>Soma dos Elementos de um Vetor</h1>
+    <label for="inVetor">Informe os valores do vetor:</label>
+    <input type="number" name="" id="inVetor">
+
+    <button id="btAdicionar">Adicionar numero</button>
+    <button id="btSoma">Mostrar Soma</button>
+
+    <pre id="outSoma"></pre>
+
+    <script>
+        let vetor = []
+
+        function addVetor(){
+            let inVetor = Number(document.getElementById("inVetor").value)
+            let outSoma = document.getElementById("outSoma")
+
+            vetor.push(inVetor)
+
+            document.getElementById("inVetor").value = ""
+            outSoma.innerHTML = `Vetor [${vetor}]`
+        }
+
+        function somaVetor(){
+            let soma = 0
+
+            for(let i = 0; i<vetor.length; i++){
+
+                soma += vetor[i]
+
+            }
+            outSoma.innerHTML += `<p>A soma do vetor = [ ${vetor} ] é = ${soma}</p>`
+
+        }
+
+        let btAdicionar = document.getElementById("btAdicionar")
+        btAdicionar.addEventListener("click",addVetor)
+
+        let btSoma= document.getElementById("btSoma")
+        btSoma.addEventListener("click",somaVetor)
+
+    </script>
+</body>
+</html>

@@ -19,6 +19,8 @@
         function addVetor(){
             let inVetor = document.getElementById("inVetor").value
             adicionarVetor.push(inVetor)  
+
+            document.getElementById("inVetor").value = ""
             
             document.getElementById("outMedia").innerHTML = ` numero ${adicionarVetor} adicionado`
 

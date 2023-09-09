@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Numeros Primos</title>
+</head>
+<body>
+    <h1>Numero Primo</h1>
+    <label for="inNumero">Informe um valor para saber se é primo:</label>
+    <input type="number" name="" id="inNumero">
+
+    <button id="btMostrar">Mostrar</button>
+
+    <pre id="outMostrar"></pre>
+
+    <script>
+        function numeroPrimo(){
+            let inNnumero = document.getElementById("inNumero").value
+
+            document.getElementById("inNumero").value = ""
+
+            let numero = true
+            
+            let i = 2
+            for(i = 2;i<=Math.sqrt(inNnumero); i++){
+
+                if(inNnumero % i === 0){
+                    numero = false
+                    break
+                }
+            }
+            if(numero == false){
+                document.getElementById("outMostrar").innerHTML = `O numero ${inNnumero} não é primo, é divisivel por ${i}`
+            }
+            else{
+                document.getElementById("outMostrar").innerHTML = `O numero ${inNnumero} é primo`
+            }
+        }
+
+        let btMostrar = document.getElementById("btMostrar")
+        btMostrar.addEventListener("click",numeroPrimo)
+    </script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fibonacci</title>
+</head>
+<body>
+    <h1>Fibonacci</h1>
+    <label for="inNumero">Entre com o N-ésimo termo:</label>
+    <input type="number" name="" id="inNumero">
+
+    <button id="btMostrar">Mostrar Sequencia</button>
+
+    <pre id="outMostrar"></pre>
+
+    <script>
+        function fibonacci(){
+            let inNumero = document.getElementById("inNumero").value
+            let outMostrar = document.getElementById("outMostrar")
+
+            document.getElementById("inNumero").value = ""
+
+            let anterior = 0
+            let proximo = 1
+            let soma = 1
+            let resp =""
+            outMostrar.innerHTML = `Sequencia: ${proximo}, `
+
+            for(let i = 1; i<inNumero; i++){
+                soma = anterior + proximo
+                anterior = proximo
+                proximo = soma
+                resp += soma + " , "                
+            }
+            outMostrar.innerHTML += `${resp}`
+
+
+        }
+
+        let btMostrar = document.getElementById("btMostrar")
+        btMostrar.addEventListener("click", fibonacci)
+    </script>
+</body>
+</html>
