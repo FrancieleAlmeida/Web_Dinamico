@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contagem de Vogais e Consoantes</title>
+</head>
+<body>
+    <h1>Contagem de Vogais e Consoantes</h1>
+
+    <input type="text" name="" id="inTexto" placeholder="informe uma palavra ou frase">
+    <button id="btMostrar">Mostrar Vogais e Consoantes</button>
+
+    <div id="outMostrar"></div>
+
+    <script>
+        let vogal =0
+        let consoante =""
+        function contar(){
+            let inTexto = document.getElementById("inTexto").value
+            let outMostrar = document.getElementById("outMostrar")
+            consoante = (inTexto.replace(/[aeiou\s]/g, ""))
+            
+            console.log(consoante)
+            outMostrar.innerHTML = `<p></p> Na palavra ${inTexto} digitada temos: ${consoante.length} consoantes `
+
+
+            for(let i = 0; i<inTexto.length; i++){
+
+                if(inTexto[i] == "a" || inTexto[i] == "e" || inTexto[i] == "i" || inTexto[i] == "o" || inTexto[i] == "u"){
+                    vogal ++
+                }
+            }
+            outMostrar.innerHTML += ` e ${vogal} vogais `
+            document.getElementById("inTexto").value = ""
+            vogal = 0
+
+
+
+        }
+        let btMostrar =document.getElementById("btMostrar")
+        btMostrar.addEventListener("click", contar)
+    </script>
+</body>
+</html>

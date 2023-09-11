@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maior Divisor Comum (MDC)</title>
+</head>
+<body>
+    <h1>Maior Divisor Comum - MDC</h1>
+
+    <label for="inNumero">Infome os valores:</label>
+    <input type="number" name="" id="inNumero1" placeholder="informe primeiro valor">
+    <input type="number" name="" id="inNumero2" placeholder="informe segundo valor">
+    <button id="btInformar">Informar</button>
+    <button id="btMdc">Mostrar MDC</button>
+
+    <div id="outMostrar"></div>
+
+    <script>
+        function informar(){
+            inNumero1 = document.getElementById("inNumero1").value
+            inNumero2 = document.getElementById("inNumero2").value
+
+            document.getElementById("btInformar").disabled = true
+            let outMostrar = document.getElementById("outMostrar")
+
+            outMostrar.innerHTML = `<p>numero 1: ${inNumero1}, numero 2: ${inNumero2}</p>`
+        }
+
+        function mdc(){
+            let quociente = 0
+            let resto = 0
+            
+            
+            if(inNumero1 > inNumero2){
+
+                if(inNumero1 % inNumero2 == 0){
+                    quociente = inNumero1 / inNumero2
+
+                    outMostrar.innerHTML += `o mdc é: ${quociente}`
+                }
+
+                else{
+                        while(inNumero2 !=0 ){
+                            resto = inNumero1 % inNumero2
+                            inNumero1 = inNumero2
+                            inNumero2 = resto
+                            
+                        }
+                        outMostrar.innerHTML += `o mdc é: ${inNumero1}`
+                }
+
+            }
+            else{
+
+                if(inNumero2 % inNumero1 == 0){
+                    quociente = inNumero2 / inNumero1
+
+                    outMostrar.innerHTML += `o mdc é: ${quociente}`
+
+
+                }
+                else{
+                    while(inNumero1 !=0 ){
+                        resto = inNumero2 % inNumero1
+                        inNumero2 = inNumero1
+                        inNumero1 = resto
+                    }
+                    outMostrar.innerHTML += `o mdc é: ${inNumero2}`
+
+                }
+
+            }
+        }
+
+        let btInformar = document.getElementById("btInformar")
+        btInformar.addEventListener("click", informar)
+
+        let btMdc = document.getElementById("btMdc")
+        btMdc.addEventListener("click", mdc)
+    </script>
+</body>
+</html>

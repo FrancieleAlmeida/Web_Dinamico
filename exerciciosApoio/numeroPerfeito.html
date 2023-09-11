@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Numeros Perfeitos</title>
+</head>
+<body>
+    <h1>Numeros Perfeitos</h1>
+
+    <label for="inNumero">Informe um numero</label>
+    <input type="number" name="" id="inNumero">
+    <button id="btVerificar">Verificar Numero</button>
+
+    <div id="outMostrar"></div>
+
+    <script>
+        function numeroPerfeito(){
+            let inNumero = document.getElementById("inNumero").value
+
+            let outMostrar = document.getElementById("outMostrar")
+
+            document.getElementById("inNumero").value = ""
+
+            let i = 1
+            let soma = 0
+            let msg = ""
+            for(i=1; i < inNumero; i++ ){
+
+                
+                if(inNumero % i == 0){
+
+                    soma += i
+
+                    msg += i + "+"
+
+                    if( soma == inNumero){
+
+
+                        outMostrar.innerHTML = `<p> </p> `
+                        outMostrar.innerHTML += `numero ${inNumero} é perfeito pois: `
+                        outMostrar.innerHTML += ` soma dos numeros ${msg} = ${soma} `
+
+
+                    }
+                    else{
+                        outMostrar.innerHTML = `<p> numero ${inNumero} não é perfeito </p>`
+
+
+                    }
+                }
+                
+            }
+            
+        }
+
+        let btVerificar = document.getElementById("btVerificar")
+        btVerificar.addEventListener("click", numeroPerfeito)
+    </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conta Palavras em uma String</title>
+</head>
+<body>
+    <h1>Conta Palavras em uma String</h1>
+
+    <label for="inTexto">Informe uma frase:</label>
+    <input type="text" name="" id="inTexto">
+    <button id="btContar">Contar palavras</button>
+
+    <div id="outMostrar"></div>
+
+    <script>
+        function contaPalavras(){
+            let inTexto =document.getElementById("inTexto").value
+
+            document.getElementById("inTexto").value = ""
+            let outMostrar = document.getElementById("outMostrar")
+
+            outMostrar.innerHTML = ` <p>Frase: ${inTexto}</p>`
+
+            inTexto = (inTexto.split(" "))
+            
+            outMostrar.innerHTML += `<p>a frase tem ${inTexto.length} palavras</p>`
+            
+        }
+        let btContar = document.getElementById("btContar")
+        btContar.addEventListener("click",contaPalavras)
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Ponderada</title>
+</head>
+<body>
+
+
+
+    <h1>Media Ponderada</h1>
+
+    <input type="text" name="" id="inNota" placeholder="informe a nota">
+    <input type="text" name="" id="inPeso" placeholder="informe o peso">
+
+    <button id="btLancar">lançar</button>
+    <button id="btMedia">Media</button>
+    <button id="btRecarregar">Inserir novos valores</button>
+
+    <div id="outMostrar"></div>
+
+    <script>
+
+        let resp1 = 0
+        let resp2 = 0
+        let mediaP = 0
+        
+        function notas(){
+            let inNota = document.getElementById("inNota").value
+            let inPeso = document.getElementById("inPeso").value
+            let outMostrar = document.getElementById("outMostrar")
+
+
+            resp1 += Number(inNota * inPeso)
+
+            resp2 += Number(inPeso)
+            document.getElementById("inNota").value = ""
+            document.getElementById("inPeso").value = ""
+
+            console.log(resp1)
+            console.log(resp2)
+
+            outMostrar.innerHTML += `<p></p> Nota: ${inNota} Peso: ${inPeso}`
+
+        }
+
+        function media(){
+
+            document.getElementById("btLancar").disabled = true
+
+
+            mediaP = resp1 / resp2
+            console.log(mediaP)
+
+            outMostrar.innerHTML +=  `<p><p> A media ponderada é: ${mediaP}`
+            document.getElementById("btMedia").disabled = true
+        }
+
+        function recarregar(){
+            location.reload()
+        }
+
+        
+
+        let btLancar = document.getElementById("btLancar")
+        btLancar.addEventListener("click", notas)
+
+        let btMedia = document.getElementById("btMedia")
+        btMedia.addEventListener("click", media)
+
+        let btRecarregar = document.getElementById("btRecarregar")
+        btRecarregar.addEventListener("click", recarregar)
+
+    </script>
+</body>
+</html>

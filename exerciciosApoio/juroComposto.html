@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculo de Juros Compostos</title>
+</head>
+<body>
+    <h1>Calculo de Juros Compostos</h1>
+
+    <input type="number" name="" id="capital" placeholder="informe capital inicial">
+    <input type="number" name="" id="taxa" placeholder="taxa de juros anual">
+    <input type="number" name="" id="tempo" placeholder="periodo (anos)">
+
+    <button id="btMostrar">Mostrar Montante</button>
+
+    <div id="outMostrar"></div>
+
+    <script>
+        function montante(){
+            let capital = document.getElementById("capital").value
+            let taxa = document.getElementById("taxa").value
+            let tempo = document.getElementById("tempo").value
+
+            let outMostrar = document.getElementById("outMostrar")
+
+            outMostrar.innerHTML = `<p> Capital:R$ ${capital} reais, taxa de juros: ${taxa}a.a, periodo: ${tempo} anos </p>`
+
+            let montante =0
+            taxa = taxa /100
+            taxa = (1+taxa)
+            montante = capital * Math.pow(taxa, tempo)
+
+            outMostrar.innerHTML += `o Montante sera de: R$ ${montante.toFixed(2)} reais`
+
+            document.getElementById("capital").value = ""
+            document.getElementById("taxa").value = ""
+            document.getElementById("tempo").value = ""
+        }
+        let btMostrar = document.getElementById("btMostrar")
+        btMostrar.addEventListener("click", montante)
+    </script>
+</body>
+</html>

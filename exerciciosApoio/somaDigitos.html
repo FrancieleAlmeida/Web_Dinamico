@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soma dos Digitos</title>
+</head>
+<body>
+    <h1>Soma dos Digitos</h1>
+
+    <label for="inNumero">Informe os numeros:</label>
+    <input type="text" name="" id="inNumero">
+
+    <button id="btSoma">Mostrar Soma dos Digitos</button>
+
+    <div id="outMostrar"></div>
+
+    <script>
+        function somaDigitos(){
+            let inNumero = document.getElementById("inNumero").value
+
+            document.getElementById("inNumero").value = ""
+            let outMostrar = document.getElementById("outMostrar")
+
+            outMostrar.innerHTML = `<p></p>A soma dos digitos ${inNumero} é: `
+            let soma =0
+            
+            for(let i =0 ; i < inNumero.length; i++){
+
+                soma += Number(inNumero [i])
+
+            }
+
+            outMostrar.innerHTML += ` ${soma}`
+
+
+        }
+
+        let btSoma = document.getElementById("btSoma")
+        btSoma.addEventListener("click", somaDigitos)
+    </script>
+</body>
+</html>
