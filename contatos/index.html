@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Contatos</title>
+    <link rel="stylesheet" href="./scss/style.css">
+    <script src="./js/script.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="formulario">
+                <h1>Contatos</h1>
+                <small id="erro"></small>
+
+                <form action="">
+                    <input type="hidden" name="id"/>
+                    <label for="nome">Nome:</label>
+                    <input type="text" name="nome" data-index="new" class="form-input"id="nome" placeholder="Informe seu nome" required  />
+
+                    <label for="email">Email:</label>
+                    <input type="email" name="email" id="email" class="form-input" placeholder="ex:nome@email.com" required/>
+                    
+                    <label for="telefone">Telefone:</label>
+                    <input type="tel" name="telefone" id="telefone" class="form-input" placeholder="(55)55555-5555" required/>
+
+                    <label for="data">Data de Nascimento:</label>
+                    <input type="date" name="data" id="data" class="form-input" required />
+
+                    <input type="submit" id="btEnviar"  value="Enviar">
+                </form>
+            </div>
+        </div>
+        <div class="down">
+            <div class="tabela">
+                <table id="contatoTabela">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>NOME</th>
+                            <th>EMAIL</th>
+                            <th>TELEFONE</th>
+                            <th>NASCIMENTO</th>
+                            <th colspan="2">AÇÃO</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>

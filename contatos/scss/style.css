@@ -1,0 +1,127 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: "Roboto", sans-serif;
+  list-style: none;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  background: #ffffff;
+  overflow: auto;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 2rem;
+}
+.row .formulario {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  height: 30rem;
+  border-radius: 10px;
+  background: #4BB1FA;
+  box-shadow: 2px 2px 10px 1px rgb(0, 0, 0);
+}
+.row .formulario h1 {
+  text-align: center;
+  color: white;
+}
+.row .formulario #erro {
+  color: red;
+  text-align: center;
+  font-weight: bolder;
+}
+.row .formulario form {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  height: 30rem;
+  padding-left: 1.5rem;
+  padding-right: 1rem;
+  color: white;
+}
+.row .formulario form input {
+  height: 3rem;
+  width: 30rem;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  padding-left: 1rem;
+}
+.row .formulario form input[type=date] {
+  width: 20rem;
+}
+.row .formulario form input[type=submit] {
+  border-radius: 50px;
+  background: black;
+  height: 4rem;
+  color: white;
+}
+.row .formulario form input[type=submit]:hover {
+  cursor: pointer;
+  background: blue;
+}
+
+.down {
+  display: flex;
+  justify-content: center;
+  margin: 2rem;
+}
+.down .tabela {
+  width: 100%;
+}
+.down .tabela table {
+  width: 100%;
+  border: 0.2rem solid rgb(194, 189, 189);
+  padding: 1rem;
+  text-align: center;
+  gap: 2rem;
+}
+.down .tabela table th {
+  padding: 1rem 0;
+  background: #4BB1FA;
+  border-radius: 5px;
+  gap: 2rem;
+  height: 4rem;
+  color: #ffffff;
+}
+.down .tabela table td {
+  padding-top: 1rem;
+  border-bottom: 0.2rem dashed black;
+  padding-bottom: 1rem;
+}
+.down .tabela table button {
+  background: red;
+  border: none;
+  width: 8rem;
+  height: 3rem;
+  border-radius: 10px;
+  color: white;
+  font-weight: bolder;
+}
+.down .tabela table button.bteditar {
+  background: #3d3dce;
+}
+.down .tabela table button:hover {
+  background: #121212;
+  cursor: pointer;
+}/*# sourceMappingURL=style.css.map */
