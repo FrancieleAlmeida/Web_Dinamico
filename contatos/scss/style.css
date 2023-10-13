@@ -30,11 +30,12 @@ body {
   align-items: center;
   justify-content: center;
   margin: 2rem;
+  position: relative;
 }
 .row .formulario {
   display: flex;
   flex-direction: column;
-  width: 50%;
+  width: 51%;
   height: 30rem;
   border-radius: 10px;
   background: #4BB1FA;
@@ -45,9 +46,53 @@ body {
   color: white;
 }
 .row .formulario #erro {
+  display: none;
+  padding-top: 1rem;
   color: red;
   text-align: center;
   font-weight: bolder;
+}
+.row .formulario .box {
+  display: none;
+  position: absolute;
+  background: #fff;
+  border: 0.1rem solid #898888;
+  width: 40rem;
+  height: 15rem;
+  left: 35%;
+  top: 40%;
+  padding: 2rem;
+  box-shadow: 2px 2px 10px 1px rgb(0, 0, 0);
+}
+.row .formulario .box h3 {
+  margin-bottom: 1.5rem;
+}
+.row .formulario .box span {
+  display: flex;
+  justify-content: center;
+}
+.row .formulario .box i {
+  color: red;
+  font-size: 2rem;
+  padding-right: 0.2rem;
+}
+.row .formulario .box button {
+  width: 10rem;
+  height: 3.5rem;
+  margin-top: 2.5rem;
+  margin-right: 1rem;
+  border-radius: 5px;
+  color: #fff;
+  border: none;
+  background: #4BB1FA;
+  font-weight: bolder;
+}
+.row .formulario .box button:nth-child(3) {
+  margin-left: 7rem;
+}
+.row .formulario .box button:hover {
+  background: red;
+  cursor: pointer;
 }
 .row .formulario form {
   display: flex;

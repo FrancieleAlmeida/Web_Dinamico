@@ -1,17 +1,19 @@
 
 atualizarTabela()
 
+
 function validacao(index,formulario){
 
     if (document.getElementById("nome").value == "" ||document.getElementById("email").value == "" || 
     document.getElementById("telefone").value == "" || document.getElementById("data").value == ""){
         console.log(" campo vazio")
-        let erro = document.getElementById("erro")
-        alert("preencha todos os campos")
-        return
+        const erro = document.getElementById("erro")
+        erro.style.display = "block"
+
         
     }
     else{
+        erro.style.display = "none"
         const formulario = {
             nome:document.getElementById("nome").value,
             email:document.getElementById("email").value,
@@ -30,7 +32,6 @@ function validacao(index,formulario){
             limparFomulario()
             document.getElementById("nome").dataset.index = 'new'
             
-            document.getElementById("nome").disabled = false
             document.getElementById("data").disabled = false
             
             console.log("editando")
@@ -84,16 +85,30 @@ function atualizar(index, formulario){
 //deletar---------------------------------------------------
 
 function deletar(index){
-    let msg = confirm("deseja excluir o contato")
-    if(msg){
+    let msg = document.querySelector('div > .box')
+    msg.style.display = 'block'
+
+    const btSim = document.getElementById("btSim")
+    btSim.addEventListener("click", () => {
+        
         let contato = getStorage()
         contato.splice(index, 1)
         setStorage(contato)
 
         atualizarTabela()
 
-    }
+        location.reload()
+    })
+
+    const btNao = document.getElementById("btNao")
+    btNao.addEventListener("click", () =>{
+
+        location.reload()
+    })
+
 }
+
+
 
 //preencher campos
 function preencherForm(formulario){
@@ -103,7 +118,6 @@ function preencherForm(formulario){
     document.getElementById("data").value = formulario.data
     document.getElementById("nome").dataset.index = formulario.index
 
-    document.getElementById("nome").disabled = true
     document.getElementById("data").disabled = true
 
 
@@ -157,3 +171,6 @@ function limparTabela(){
 //eventos-----------------------------------------------------------
 let btEnviar = document.getElementById("btEnviar")
 btEnviar.addEventListener("click",validacao)
+
+let btSim = document.getElementById("btSim")
+btSim.addEventListener("click", deletar)
