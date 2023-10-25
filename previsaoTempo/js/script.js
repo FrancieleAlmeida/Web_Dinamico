@@ -39,39 +39,36 @@ search.addEventListener("click", () =>{
             return
         }
         else{
-            console.log(`${json.main.temp}`)    
-            console.log(`${json.weather[0].description}`)
-            console.log(`${json.main.humidity}`)
-            console.log(`${json.wind.speed}`)
 
-            container.style.height = '600px'
+            container.style.height = '550px'
+            weatherBox.style.display = ''
+            weatherDetail.style.display = ''
+            erro404.style.display = 'none'
+            weatherDetail.classList.add("fadeIn")
+            weatherBox.classList.add("fadeIn")
 
-            temperature.innerText = json.main.temp
+            
+            temperature.innerHTML = `${parseInt(json.main.temp)}<span>ºC</span>`
             description.innerText = json.weather[0].description 
-            humidity.innerText = json.main.humidity
-            wind.innerText = json.wind.speed
-            console.log(json.weather[0].main == 'Rain' )
+            humidity.innerText = json.main.humidity + "% " 
+            wind.innerText = json.wind.speed + " km/h"
 
 
             if(json.weather[0].main == 'Clear'){
-                console.log('entre clear')
-                imagem.style.backgroundImage = 'url(/previsaoTempo/img/clear.png))'
+                imagem.src= './img/clear.png'
             }
             else if(json.weather[0].main == 'Rain' ){
-                console.log('entre rain')
-                imagem.style.backgroundImage = 'url(/previsaoTempo/img/rain.png))'
+                imagem.src= './img/rain.png'
             }
-            else if(json.weather[0].main == 'Cloud' ){
-                console.log('entrei cloud')
-                imagem.style.backgroundImage = 'url(/previsaoTempo/img/cloud.png))'
+            else if(json.weather[0].main == 'Clouds' ){
+                imagem.src= './img/cloud.png'
             }
-            else if(json.weather[0].main == 'Mist' ){
-                console.log('entre mist')
-                imagem.style.backgroundImage = 'url(/previsaoTempo/img/mist.png))'
+            else if(json.weather[0].main == 'Haze' ){
+                imagem.src= './img/mist.png'
             }
             else if(json.weather[0].main == 'Snow' ){
-                console.log('entre snow')
-                imagem.style.backgroundImage = 'url(/previsaoTempo/img/snow.png))'
+                imagem.src= './img/snow.png'
+
             }
 
 
